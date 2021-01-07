@@ -1,4 +1,4 @@
-# Exploring-Factors-and-Measures-to-Select-Open-Source-Software
+# Raw-Data for the paper "Exploring-Factors-and-Measures-to-Select-Open-Source-Software"
 
 The Project presents the scripts for automatic data crawling of OSS projects on Github, as well as the relevant data of such from other public sources, e.g., Reddit, StackOverflow, and NVD. The main features include: 1) get the list of projects from Github with the stars in a particular range, 2) get the relevant Github data for the projects on the previously obtained list, 3) get the Reddit data for such projects, 4) get the StackOverflow data for such projects, 5) get the NVD data for such projects, 6) save and read the crawling status enabling continuation from poetential breakpoints 7) assign crawling tasks to multiple users for collaboration and efficiency.
 
