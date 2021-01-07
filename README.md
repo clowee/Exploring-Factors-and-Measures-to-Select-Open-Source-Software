@@ -24,4 +24,4 @@ The Project presents the scripts for automatic data crawling of OSS projects on 
 
 -> For any reason, the crawling process is ceased, run main.py again to restart
 
--> If any issue remains after rerunning, manually +1 to the start_point of the targeting task in dataset/flag.csv
+-> If any issue remains after rerunning, manually +1 to the start_point of the targeting task in dataset/flag.csv to skip the problematic project
