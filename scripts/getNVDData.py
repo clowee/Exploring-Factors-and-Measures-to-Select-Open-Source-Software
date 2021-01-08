@@ -86,7 +86,7 @@ def getNVDDataProjectsInRange(fromN, toN):
                     metric2 = temp['baseMetricV2']
                     severity2 = metric2['severity']
                     thereturn = [item, item2, publishedDate, lastModifiedDate, severity3, severity2]
-                    with open("dataset/NVDcsv.csv", 'a', encoding='utf-8') as csvfile:
+                    with open("dataset/nvdData.csv", 'a', encoding='utf-8') as csvfile:
                         writer = csv.writer(csvfile, delimiter=',')
                         writer.writerow(thereturn)
             else:

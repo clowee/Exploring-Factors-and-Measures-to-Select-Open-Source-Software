@@ -70,14 +70,14 @@ def getRedditDataProjectsInRange(fromN, toN):
 
             else:
                 thereturn = [project_id, NonExistent, NonExistent, NonExistent]
-            currentdf = pd.read_csv("dataset/redditcsv.csv", index_col='project_id')
+            currentdf = pd.read_csv("dataset/redditData.csv", index_col='project_id')
             existingprojects = currentdf.index.values.tolist()
             if project_id in existingprojects:
                 currentdf.loc[project_id] = thereturn[1:]
                 currentdf.reset_index(inplace=True)
-                currentdf.to_csv("dataset/redditcsv.csv", encoding='utf-8', index=False)
+                currentdf.to_csv("dataset/redditData.csv", encoding='utf-8', index=False)
             else:
-                with open("dataset/redditcsv.csv", 'a', encoding='utf-8') as csvfile:
+                with open("dataset/redditData.csv", 'a', encoding='utf-8') as csvfile:
                     writer = csv.writer(csvfile, delimiter=',')
                     writer.writerow(thereturn)
             print("Reddit {}".format(count))

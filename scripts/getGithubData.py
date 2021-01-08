@@ -136,7 +136,7 @@ def getGithubMainData2CSV_Graphv4(projectfullname, githubdatacsv):
                 writer = csv.writer(csvfile, delimiter=',')
                 writer.writerow(thereturn)
 
-        langdf = pd.read_csv("dataset/devlanguagesDataExample.csv", index_col='project_id')
+        langdf = pd.read_csv("dataset/devlangdata/devlanguagesDataExample.csv", index_col='project_id')
         try:
             lang_search = requests.get(result['languages_url'], headers=headers)
             lang_result = lang_search.json()
@@ -146,7 +146,7 @@ def getGithubMainData2CSV_Graphv4(projectfullname, githubdatacsv):
             for item in newlangs:
                 langdf.loc[result['id'], item] = lang_result[item]
             langdf.reset_index(inplace=True)
-            langdf.to_csv("dataset/devlanguagesDataExample.csv", encoding='utf-8', index=False)
+            langdf.to_csv("dataset/devlangdata/devlanguagesDataExample.csv", encoding='utf-8', index=False)
         except:
             pass
         return 0

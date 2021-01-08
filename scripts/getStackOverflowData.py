@@ -140,7 +140,7 @@ def getStackOverflowQuestiondata(projectname):
     return thereturnresult
 
 def getStackOverflowDataProjectsInRange(thestackoverflowcsv, fromN, toN):
-    with open("dataset/projectList_old.txt", 'r', encoding='utf-8') as txtfile:
+    with open("dataset/projectList.txt", 'r', encoding='utf-8') as txtfile:
         projectList = [x.strip('\n') for x in txtfile.readlines()][fromN:toN]
     count = fromN + 1
     features = list(getStackOverflowQuestiondata(projectList[0]).keys())
@@ -275,7 +275,7 @@ def getStackOverFlowQuestionsDAC(projectfullname, stackoverflowdatacsv):
         return 0
 
 def getStackoverflowQuestionsDACfromProjectsInRange(fromN, toN):
-    with open("dataset/projectList_old.txt", 'r', encoding='utf-8') as txtfile:
+    with open("dataset/projectList.txt", 'r', encoding='utf-8') as txtfile:
         projectList = [x.strip('\n') for x in txtfile.readlines()][fromN:toN]
     count = fromN+1
     skipped = []
@@ -283,7 +283,7 @@ def getStackoverflowQuestionsDACfromProjectsInRange(fromN, toN):
         #starttime = time.time()
         #try:
         print("Stackoverflow {}".format(count))
-        apilimiterror = getStackOverFlowQuestionsDAC(project, "dataset/newstackoverflowdata.csv")
+        apilimiterror = getStackOverFlowQuestionsDAC(project, "dataset/stackoverflowData.csv")
         if apilimiterror:
             skipped.append(project)
             updateFlag.updateflag("dataset/flag.csv", your_email, 'stackoverflow', count, toN)
@@ -301,7 +301,7 @@ def getStackoverflowQuestionsDACfromProjectsInRange(fromN, toN):
     while True:
         if skipped:
             for project in skipped:
-                apilimiterror = getStackOverFlowQuestionsDAC(project, "dataset/newstackoverflowdata.csv")
+                apilimiterror = getStackOverFlowQuestionsDAC(project, "dataset/stackoverflowData.csv")
                 if apilimiterror:
                     continue
                 else:
