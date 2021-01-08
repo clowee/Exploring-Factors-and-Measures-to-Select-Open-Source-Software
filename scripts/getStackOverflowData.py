@@ -1,7 +1,7 @@
 """
 
     This script gets the StackOverflow data
-    For example, we want to have the data of the first 1000 projects in the projectListExample.txt
+    For example, we want to have the data of the first 1000 projects in the projectList.txt
     We call function as:
     getStackoverflowQuestionsDACfromProjectsInRange(0,1000)
     *** to change the saving directory, please update it inside the according function ***

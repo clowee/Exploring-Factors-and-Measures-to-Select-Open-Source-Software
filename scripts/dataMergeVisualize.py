@@ -96,7 +96,7 @@ githubdata['age'] = githubdata['age'].apply(getdays)
 githubdata['age_year'] = round(githubdata['age']/365,3)
 githubdata['issue_count'] = githubdata['open_issue_count']+githubdata['closed_issue_count']
 githubdata = githubdata.loc[githubdata['stargazer_count']>=200,:]
-githubdata.to_csv('githubDataExample.csv', encoding='utf-8', index=False)
+githubdata.to_csv('githubData.csv', encoding='utf-8', index=False)
 
 redditdata = merge_csv('redditcsv')
 redditdata.replace('No', 0, inplace=True)
@@ -110,13 +110,13 @@ redditdata.to_csv('Rtesting.csv', encoding='utf-8', index=False)
 #df_devlanguagedata.dropna(axis = 0, how = 'all', inplace = True)
 
 stackoverflowdata = merge_csv('newstackoverflowdata')
-df = pd.read_csv('githubDataExample.csv')
+df = pd.read_csv('githubData.csv')
 df_r = pd.read_csv('Rtesting.csv')
 #df.sort_values(by=['stargazer_count'], ascending=False, inplace=True)
 #df['release_count'] = df['release_count'].replace(np.NaN, 0)
 #df['issue_count'] = df['issue_count'].replace(np.NaN, 0)
 #df = df.head(100000)
-#df.to_csv('githubDataExample.csv', encoding='utf-8', index=False)
+#df.to_csv('githubData.csv', encoding='utf-8', index=False)
 
 def getProjectListinStarRange(txtfilename, fromstar, tostar):
     theQuery = f"https://api.github.com/search/repositories?q=stars:{fromstar}..{tostar}"
@@ -659,7 +659,7 @@ def displayPieChartRoles():
 #df_r.to_csv('Rtesting2.csv', encoding='utf-8', index=False)
 the100klist = df.loc[:,'full_name'].values.tolist()
 #df_r2=df_r.loc[df_r['#posts']!=0, :]
-#df_r2.to_csv('redditDataExample.csv', encoding='utf-8', index=False)
-with open('projectListExample.txt', 'w', encoding='utf-8') as txtfile:
+#df_r2.to_csv('redditData.csv', encoding='utf-8', index=False)
+with open('projectList.txt', 'w', encoding='utf-8') as txtfile:
     for item in the100klist:
         txtfile.write(item + '\n')

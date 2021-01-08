@@ -1,7 +1,7 @@
 """
 
     This script gets the Github project data
-    For example, we want to have the data of the first 1000 projects in the projectListExample.txt
+    For example, we want to have the data of the first 1000 projects in the projectList.txt
     We call function as:
     getGithubdatafromRange_Graphv4(0,1000)
     *** to change the saving directory, please update it inside the according function ***
@@ -152,13 +152,13 @@ def getGithubMainData2CSV_Graphv4(projectfullname, githubdatacsv):
         return 0
 
 def getGithubdatafromRange_Graphv4(fromN, toN):
-    with open("dataset/projectListExample.txt", 'r', encoding='utf-8') as txtfile:
+    with open("dataset/projectList.txt", 'r', encoding='utf-8') as txtfile:
         projectList = [x.strip('\n') for x in txtfile.readlines()][fromN:toN]
     count = fromN+1
     skipped = []
     for project in projectList:
         print("Project {}".format(count))
-        apilimiterror = getGithubMainData2CSV_Graphv4(project, "dataset/githubDataExample.csv")
+        apilimiterror = getGithubMainData2CSV_Graphv4(project, "dataset/githubData.csv")
         if apilimiterror:
             skipped.append(project)
             updateFlag.updateflag("dataset/flag.csv", your_email, 'project', count, toN)
@@ -170,7 +170,7 @@ def getGithubdatafromRange_Graphv4(fromN, toN):
     while True:
         if skipped:
             for project in skipped:
-                apilimiterror = getGithubMainData2CSV_Graphv4(project, "dataset/githubDataExample.csv")
+                apilimiterror = getGithubMainData2CSV_Graphv4(project, "dataset/githubData.csv")
                 if apilimiterror:
                     continue
                 else:
