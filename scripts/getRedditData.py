@@ -12,7 +12,7 @@
 import os, time
 import pandas as pd
 import praw
-from personalInfo.updateInfo import reddit_client_id_input, reddit_client_secret_input, reddit_user_agent_input,\
+from scripts.updateInfo import reddit_client_id_input, reddit_client_secret_input, reddit_user_agent_input,\
     reddit_username_input, reddit_password_input, github_personal_token_input, your_email
 from prawcore import NotFound
 import requests, csv

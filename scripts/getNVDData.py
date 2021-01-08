@@ -14,10 +14,8 @@ therefore we need
 
 """
 ####################################################### Imports ########################################################
-import os, time
-import pandas as pd
-import praw
-from personalInfo.updateInfo import your_email, getGithubToken
+import os
+from scripts.updateInfo import your_email, getGithubToken
 from prawcore import NotFound
 import requests, csv
 from scripts import updateFlag

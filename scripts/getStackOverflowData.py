@@ -9,16 +9,15 @@
 """
 
 import os
-from pprint import pprint
 import requests
 import requests.auth
 import pandas as pd
 import numpy as np
 import time
-import csv, json
+import csv
 import itertools
 from difflib import SequenceMatcher
-from personalInfo.updateInfo import your_email, getGithubToken, getStackoverflowKey
+from scripts.updateInfo import your_email, getGithubToken, getStackoverflowKey
 from scripts import updateFlag
 
 personal_token = getGithubToken(your_email)

@@ -9,13 +9,12 @@
 """
 
 import os
-from pprint import pprint
 import requests
 import pandas as pd
 import numpy as np
 import time
 import csv
-from personalInfo.updateInfo import your_email, getGithubToken
+from scripts.updateInfo import your_email, getGithubToken
 from scripts import updateFlag
 
 query = """{ 

@@ -5,12 +5,12 @@ version 3.2
 @author: Xiaozhou Li, Sergio Moreschini
 
 """
-import personalInfo.updateInfo
+import scripts.updateInfo
 from scripts import getRedditData, getStackOverflowData, getNVDData, \
     getGithubData
 import pandas as pd
 import os
-from personalInfo.updateInfo import your_email
+from scripts.updateInfo import your_email
 
 #-------------------- Greetings --------------------
 def print_hi(name):
@@ -27,7 +27,7 @@ def startcrawling():
     # Read the progress stored in flag.csv
     flagdf = pd.read_csv('dataset/flag.csv')
     # Read the tasks to crawl assigned by email in flag.csv
-    taskdf = flagdf.loc[flagdf['email'] == personalInfo.updateInfo.your_email]
+    taskdf = flagdf.loc[flagdf['email'] == scripts.updateInfo.your_email]
     targetdatatypes = taskdf.datatype.values.tolist()
     task_dict = {}
     for item in targetdatatypes:
