@@ -5,9 +5,6 @@
 
 """
 
-import os
-from pprint import pprint
-import requests
 import pandas as pd
 import numpy as np
 import csv
@@ -23,10 +20,6 @@ desired_width=320
 pd.set_option('display.width', desired_width)
 np.set_printoptions(linewidth=desired_width)
 pd.set_option('display.max_columns',25)
-
-personal_token = "636cd7f6d8423025dd09e96f3e8aa08e580144a0"
-token = os.getenv('GITHUB_TOKEN', personal_token)
-headers = {'Authorization': f'token {token}'}
 
 licenseshortDict = {
     'Not Specified': 'Not Specified',
@@ -91,36 +84,6 @@ def merge_csv_language(languagelist):
     combined_csv = pd.concat(dflist)
     combined_csv.drop_duplicates(subset='project_id', keep='last', inplace=True)
     return combined_csv
-
-"""
-githubdata = merge_csv('githubdata')
-githubdata['loc_count_k'] = round(githubdata['loc_count']/1000,1)
-githubdata['age'] = pd.to_datetime(githubdata['updated_at']) - pd.to_datetime(githubdata['created_at'])
-githubdata['age'] = githubdata['age'].apply(getdays)
-githubdata['age_year'] = round(githubdata['age']/365,3)
-githubdata['issue_count'] = githubdata['open_issue_count']+githubdata['closed_issue_count']
-githubdata = githubdata.loc[githubdata['stargazer_count']>=200,:]
-githubdata.to_csv('githubData.csv', encoding='utf-8', index=False)
-
-redditdata = merge_csv('redditcsv')
-redditdata.replace('No', 0, inplace=True)
-redditdata.replace('Forbidden', 0, inplace=True)
-redditdata['subscribers'] = redditdata['subscribers'].apply(int)
-redditdata['#posts'] = redditdata['#posts'].apply(int)
-redditdata.to_csv('Rtesting.csv', encoding='utf-8', index=False)
-"""
-
-#df_devlanguagedata = merge_csv_language(top20langs)
-#df_devlanguagedata.dropna(axis = 0, how = 'all', inplace = True)
-
-stackoverflowdata = merge_csv('newstackoverflowdata')
-df = pd.read_csv('githubData.csv')
-df_r = pd.read_csv('Rtesting.csv')
-#df.sort_values(by=['stargazer_count'], ascending=False, inplace=True)
-#df['release_count'] = df['release_count'].replace(np.NaN, 0)
-#df['issue_count'] = df['issue_count'].replace(np.NaN, 0)
-#df = df.head(100000)
-#df.to_csv('githubData.csv', encoding='utf-8', index=False)
 
 def getProjectListinStarRange(txtfilename, fromstar, tostar):
     theQuery = f"https://api.github.com/search/repositories?q=stars:{fromstar}..{tostar}"
