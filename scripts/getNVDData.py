@@ -91,35 +91,8 @@ def getNVDDataProjectsInRange(fromN, toN):
                         writer.writerow(thereturn)
             else:
                 print("Project {} NOT exist any more... very sad".format(count))
-            #currentdf = pd.read_csv("dataset/NVDcsv.csv", index_col='project_id')
-            #existingprojects = currentdf.index.values.tolist()
-            #print("NVD {}".format(count))
-            #if project_id in existingprojects:
-            #    currentdf.loc[project_id] = thereturn[1:]
-            #    currentdf.reset_index(inplace=True)
-            #    currentdf.to_csv("dataset/NVDcsv.csv", encoding='utf-8', index=False)
-            #else:
-            #    with open("dataset/NVDcsv.csv", 'a', encoding='utf-8') as csvfile:
-            #        writer = csv.writer(csvfile, delimiter=',')
-            #        writer.writerow(thereturn)
-            #currentdf = pd.read_csv(
-            #    "/Users/sergiomoreschini/Documents/PYCHARM/OSS_AUTOMATED_ANALYSIS/dataset/NVDcsv.csv",
-            #    index_col='project_id')
         except KeyError:
             print(Exception)
             print("Project {} NOT exist any more... very sad".format(count))
         updateFlag.updateflag("dataset/flag.csv", your_email, 'nvd', count, toN)
         count = count + 1
-    #return count
-
-
-
-######################################################## Main #########################################################
-
-#count = getNVDDataProjectsInRange(0, 39, count)
-#end_time = time.time()
-#execution_time = end_time - start_time
-#print("Total execution time: %s seconds" % execution_time)#
-#print("Number of Forbidden Keywords is %s" % count)
-
-
