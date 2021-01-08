@@ -1,9 +1,15 @@
+"""
+
+    This script contains functions to merge separately crawled datasets
+    and visualize the data in terms of stats.
+
+"""
+
 import os
 from pprint import pprint
 import requests
 import pandas as pd
 import numpy as np
-import time
 import csv
 import glob
 import seaborn as sns
@@ -11,7 +17,6 @@ import matplotlib.pyplot as plt
 import os
 from pprint import pprint
 import requests
-import textwrap, matplotlib.mlab
 import operator
 
 desired_width=320
@@ -23,7 +28,6 @@ personal_token = "636cd7f6d8423025dd09e96f3e8aa08e580144a0"
 token = os.getenv('GITHUB_TOKEN', personal_token)
 headers = {'Authorization': f'token {token}'}
 
-#top20langs = ['JavaScript', 'Python', 'Java', 'C++', 'Go', 'C', 'PHP', 'Objective-C', 'TypeScript', 'Ruby', 'C#', 'HTML', 'Swift', 'Shell', 'CSS', 'Jupyter Notebook', 'Rust', 'Kotlin', 'Vue', 'Scala']
 licenseshortDict = {
     'Not Specified': 'Not Specified',
     'LaTeX Project Public License v1.3c': 'Latex v1.3c',
@@ -634,32 +638,3 @@ def displayPieChartRoles():
     plt.title("Number of Interviews from Different Roles")
     plt.savefig('interviews_roles.png', bbox_inches='tight')
     plt.show()
-
-#df = df.loc[df['issue_count']>0,:]
-#print(df.loc[df['issue_count']==df['issue_count'].max()])
-#getmissingProjects(df, "../dataset/newlist.txt", "missinglist.txt")
-#displayPLStatsHistplot_matplotlib(df,20)
-#print(df.loc[df['stargazer_count']>200].shape)
-#print(devlanguagedata.head())
-# 51527
-#displayLicenseStatsHistplot_matplotlib(df)
-#displayPLStatsHistplot_matplotlib(df,20)
-#displayLOCStatsHistplot_matplotlib(df)
-#displayReleaseStatsHistplot_matplotlib(df)
-#displayYearsStatsHistplot_matplotlib(df)
-##displayStarStatsHistplot_matplotlib(df)
-#displayLOCbyLanguageStatsHistplot_matplotlib(df,20)
-
-#displayRedditPostsStates_matplotlib(df_r)
-#displayStackoverflowQuestionsStates_matplotlib(stackoverflowdata)
-
-#print(df_r.loc[((df_r['#posts']==0)&(df_r['subscribers']==0)&(df_r['created']==0)),:])
-#df_r.sort_values(by=['#posts'], ascending=False, inplace=True)
-#df_r = df_r.head(100000)
-#df_r.to_csv('Rtesting2.csv', encoding='utf-8', index=False)
-the100klist = df.loc[:,'full_name'].values.tolist()
-#df_r2=df_r.loc[df_r['#posts']!=0, :]
-#df_r2.to_csv('redditData.csv', encoding='utf-8', index=False)
-with open('projectList.txt', 'w', encoding='utf-8') as txtfile:
-    for item in the100klist:
-        txtfile.write(item + '\n')
