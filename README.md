@@ -1,6 +1,6 @@
 # Raw-Data for the paper "Exploring-Factors-and-Measures-to-Select-Open-Source-Software"
 
-<p>The Project presents the scripts for automatic data crawling of OSS projects on Github, as well as the relevant data of such from other public sources, e.g., Reddit, StackOverflow, and NVD. The main features include: 
+The Project presents the scripts for automatic data crawling of OSS projects on Github, as well as the relevant data of such from other public sources, e.g., Reddit, StackOverflow, and NVD. The main features include: 
    
    - get the list of projects from Github with the stars in a particular range, 
    - get the relevant Github data for the projects on the previously obtained list, 
@@ -9,14 +9,10 @@
    - get the NVD data for such projects, 
    - save and read the crawling status enabling continuation from poetential breakpoints, 
    - assign crawling tasks to multiple users for collaboration and efficiency.
-   
-</p>
-</br>
 
 ### Content Description
 
 #### Dataset:
-<p>
 
 - flag.csv: The tracking of data crawling tasks
 - githubData.csv: The dataset for the selected Github projects information
@@ -27,11 +23,7 @@
 - stackoverflowData.csv: The dataset for the information on StackOverflow related to the selected Github projects
 - evlangData: The datasets for the stats of lines of code for the developing languages used in the selected Github projects
 
-</p>
-<br>
-
 #### Scripts:
-<p>
    
 - dataMergeVisualize.py: The script to merge distributedly collected data and to visualize
 - getGithubData.py: The script to crawl Github data using Github API
@@ -41,8 +33,6 @@
 - getStackOverflowData.py: The  script to crawl StackOverflow data using StackOverflow API
 - updateFlag.py: The script to track the crawling task status
 - updateInfo.py: The script to store and update the crawler's keys and tokens
-
-</p>
 
 ### How to Use
 #### Preparation:
