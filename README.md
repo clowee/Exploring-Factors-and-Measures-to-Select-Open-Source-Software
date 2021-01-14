@@ -15,7 +15,7 @@
 
 Content Description:
 
-1) Dataset:<br>
+1) Dataset:
 <p>
 
 - flag.csv: The tracking of data crawling tasks
@@ -27,11 +27,12 @@ Content Description:
 - stackoverflowData.csv: The dataset for the information on StackOverflow related to the selected Github projects
 - evlangData: The datasets for the stats of lines of code for the developing languages used in the selected Github projects
 
-   </p>
+</p>
 <br>
 
-2) Scripts:<br>
+2) Scripts:
 <p>
+   
 - dataMergeVisualize.py: The script to merge distributedly collected data and to visualize
 - getGithubData.py: The script to crawl Github data using Github API
 - getNVDData.py: The script to crawl NVD data using NVD api
@@ -40,6 +41,7 @@ Content Description:
 - getStackOverflowData.py: The  script to crawl StackOverflow data using StackOverflow API
 - updateFlag.py: The script to track the crawling task status
 - updateInfo.py: The script to store and update the crawler's keys and tokens
+
 </p>
 
 
