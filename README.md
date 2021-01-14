@@ -21,7 +21,7 @@ The Project presents the scripts for automatic data crawling of OSS projects on 
 - projectList.txt: The list of fullnames of the selected OSS projects from Github
 - redditData.csv: The dataset for the information on Reddit related to the selected Github projects
 - stackoverflowData.csv: The dataset for the information on StackOverflow related to the selected Github projects
-- evlangData: The datasets for the stats of lines of code for the developing languages used in the selected Github projects
+- devlangData: The datasets for the stats of lines of code for the developing languages used in the selected Github projects
 
 #### Scripts:
    
