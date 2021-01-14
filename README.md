@@ -13,9 +13,9 @@
 </p>
 </br>
 
-###Content Description
+### Content Description
 
-####Dataset:
+#### Dataset:
 <p>
 
 - flag.csv: The tracking of data crawling tasks
@@ -30,7 +30,7 @@
 </p>
 <br>
 
-####Scripts:
+#### Scripts:
 <p>
    
 - dataMergeVisualize.py: The script to merge distributedly collected data and to visualize
@@ -44,8 +44,8 @@
 
 </p>
 
-###How to Use
-####Preparation:
+### How to Use
+#### Preparation:
 
 - Follow the instruction written in How to Get all the Tokens and Keys.pdf to get the required keys and tokens.
 - Add obtained tokens to dataset/info.csv behind your email (task identifier) separated by comma.
@@ -53,11 +53,11 @@
 - Clarify your crawling tasks in dataset/flag.csv by adding email, datatype, start_point, and end_point. For example, crawling nvd data for the first 1000 projects -> add a line youremail@email.com,nvd,0,1000 in flag.csv
 - ** NOTE: don't add multiple lines of tasks for the same datatype.
 
-####Start Crawling:
+#### Start Crawling:
 
 - Run main.py to start crawling
 
-####Potential Fixes:
+#### Potential Fixes:
 
 - For any reason, the crawling process is ceased, run main.py again to restart
 - If any issue remains after rerunning, manually +1 to the start_point of the targeting task in dataset/flag.csv to skip the problematic project
