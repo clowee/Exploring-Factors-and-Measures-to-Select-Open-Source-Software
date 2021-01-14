@@ -12,8 +12,11 @@
    </ol>
 </p>
 </br>
-Content Description:</br>
+
+Content Description:
+
 1) Dataset:<br>
+<p>
 <ul>
 <li>flag.csv: The tracking of data crawling tasks<\li>
 <li>githubData.csv: The dataset for the selected Github projects information<\li>
@@ -24,17 +27,19 @@ Content Description:</br>
 <li>stackoverflowData.csv: The dataset for the information on StackOverflow related to the selected Github projects<\li>
 d<li>evlangData: The datasets for the stats of lines of code for the developing languages used in the selected Github projects<\li>
 <ul>
-<br><br>
+   </p>
+<br>
 2) Scripts:<br>
+   
 <ul>
-<li>dataMergeVisualize.py: The script to merge distributedly collected data and to visualize<\li>
-<li>getGithubData.py: The script to crawl Github data using Github API<\li>
-<li>getNVDData.py: The script to crawl NVD data using NVD api<\li>
-<li>getProjectList.py: The script to get a list of project names fron Github based on particular criteria<\li>
-<li>getRedditData.py: The script to crawl Reddit data using Reddit API<\li>
-<li>getStackOverflowData.py: The  script to crawl StackOverflow data using StackOverflow API<\li>
-<li>updateFlag.py: The script to track the crawling task status<\li>
-<li>updateInfo.py: The script to store and update the crawler's keys and tokens<\li>
+   <li>dataMergeVisualize.py: The script to merge distributedly collected data and to visualize<\li>
+   <li>getGithubData.py: The script to crawl Github data using Github API<\li>
+   <li>getNVDData.py: The script to crawl NVD data using NVD api<\li>
+   <li>getProjectList.py: The script to get a list of project names fron Github based on particular criteria<\li>
+   <li>getRedditData.py: The script to crawl Reddit data using Reddit API<\li>
+   <li>getStackOverflowData.py: The  script to crawl StackOverflow data using StackOverflow API<\li>
+   <li>updateFlag.py: The script to track the crawling task status<\li>
+   <li>updateInfo.py: The script to store and update the crawler's keys and tokens<\li>
 </ul>
 
 
